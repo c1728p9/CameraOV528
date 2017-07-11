@@ -201,7 +201,7 @@ void CameraOV528::take_picture(void)
         error("Get picture command failed");
     }
     camera_command_t resp = {0};
-    uint32_t size_read = _read((uint8_t*)&resp, COMMAND_LENGTH, 1000);
+    uint32_t size_read = _read((uint8_t*)&resp, COMMAND_LENGTH, 5000);
     if (size_read != COMMAND_LENGTH) {
         error("Get picture response invalid");
     }
